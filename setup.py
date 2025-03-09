@@ -12,8 +12,8 @@ VERSION = "2025.3.1"
 setup(
     name="aioecowitt",
     version=VERSION,
-    url="https://github.com/home-assistant-libs/aioecowitt",
-    download_url="https://github.com/home-assistant-libs/aioecowitt",
+    url="https://github.com/GSzabados/aioecowitt",
+    download_url="https://github.com/GSzabados/aioecowitt",
     author="Home Assistant Team",
     author_email="hello@home-assistant.io",
     description="Python wrapper for EcoWitt Protocol",

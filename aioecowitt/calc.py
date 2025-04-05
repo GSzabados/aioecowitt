@@ -248,6 +248,10 @@ def weather_datapoints(
         data["co2_24h"] = int(data["co2_24h"])
     if "humi_co2" in data:
         data["humi_co2"] = int(data["humi_co2"])
+    if "co2in" in data:
+        data["co2in"] = int(data["co2in"])
+    if "co2in_24h" in data:
+        data["co2in_24h"] = int(data["co2in_24h"])
 
     # Batteries
     bat_names = [
@@ -258,6 +262,7 @@ def weather_datapoints(
         "wh65",
         "wh68",
         "wh80",
+        "wh85",
         "wh90",
         "co2_",
         "_co2",
@@ -325,6 +330,7 @@ def weather_datapoints(
 
     bat_full_names = [
         "ws90cap_volt",
+        "ws85cap_volt",
         "console_batt",
     ]
     for name in bat_full_names:

@@ -292,7 +292,7 @@ def weather_datapoints(
             if batt_type == EcoWittSensorTypes.BATTERY_BINARY:
                 data[name] = int(data[name])
             elif batt_type == EcoWittSensorTypes.BATTERY_BINARY_INVERTED:
-                data[name] = int(data[name])
+                data[name] = 1 - int(data[name])
             else:
                 data[name] = float(data[name])
                 
@@ -316,7 +316,7 @@ def weather_datapoints(
                 elif batt_type == EcoWittSensorTypes.BATTERY_BINARY:
                     data[name] = int(data[name])
                 elif batt_type == EcoWittSensorTypes.BATTERY_BINARY_INVERTED:
-                    data[name] = int(data[name])
+                    data[name] = 1 - int(data[name])
                 else:
                     data[name] = float(data[name])
 
@@ -328,7 +328,7 @@ def weather_datapoints(
                 if batt_type == EcoWittSensorTypes.BATTERY_BINARY:
                     data[name] = int(data[name])
                 elif batt_type == EcoWittSensorTypes.BATTERY_BINARY_INVERTED:
-                    data[name] = int(data[name])
+                    data[name] = 1 - int(data[name])
                 else:
                     data[name] = float(data[name])
 

@@ -201,6 +201,20 @@ def weather_datapoints(
         if name in data:
             data[name] = int(data[name])
 
+    # Soil moisture (WH52)
+    for j in range(1, 17):
+        name = f"soil_ec_hum{j}"
+        if name in data:
+            data[name] = int(data[name])
+
+    # Soil temperature (WH52)
+    for j in range(1, 17):
+        wnf = f"soil_ec_temp{j}"
+        wnc = f"soil_ec_temp{j}c"
+        if wnf in data:
+            data[wnf] = float(data[wnf])
+            data[wnc] = _ftoc(data[wnf])
+
     # PM 2.5 sensor (WH41)
     for j in range(1, 5):
         pmc = f"pm25_ch{j}"
@@ -302,6 +316,7 @@ def weather_datapoints(
     bat_range_names = [
         "",  # for just 'batt'
         "soil",
+        "soil_ec_",
         "pm25",
         "leak",
         "tf_",  # WN34 voltage type
@@ -310,7 +325,7 @@ def weather_datapoints(
         "lds", # LDS01 voltage type
     ]
     for r_prefix in bat_range_names:
-        for j in range(1, 11):
+        for j in range(1, 17):
             name = f"{r_prefix}batt{j}"
             if name in data:
                 batt_type = SENSOR_MAP[name].stype
